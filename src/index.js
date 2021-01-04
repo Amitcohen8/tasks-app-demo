@@ -1,14 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter,Route, Switch} from 'react-router-dom'
 import './index.css';
 import App from './App';
-import {TaskContextProvider} from './context/TaskContext'
+import Board from './components/Board'
+import { TaskContextProvider } from './context/TaskContext'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <TaskContextProvider>
-      <App />
+
+      
+      <HashRouter>
+      <Switch>
+          <Route exact path="/" render={() => <App />} />
+      <Route key="rnd" path="/r&d" render={() => <Board title="r&d"/>} />
+      <Route key="sales" path="/sales" render={() => <Board title="sales" />} />
+      </Switch>
+      </HashRouter>
+     
+
+
     </TaskContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

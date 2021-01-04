@@ -39,7 +39,7 @@ const Card = ({ id, description, status }) => {
         <div className="card" onDoubleClick={() => handleEdit()}>
             <div className="card-navigation card-navigation-left">
                 {status !== "Candidates" ?
-                    <a href="#" onClick={() => changeTaskStatus('left', status, id)}>
+                    <a  onClick={() => changeTaskStatus('left', status, id)}>
                         <ArrowBackIosIcon color='default' className="card-navigation-icon" />
                     </a> : null
                 }
@@ -87,7 +87,10 @@ const Card = ({ id, description, status }) => {
 
                 {
                     status !== "Completed" ?
-                        <a href="#" onClick={() => changeTaskStatus('right', status, id)} >
+                        <a  onClick={()=>{ 
+                            changeTaskStatus('right', status, id)
+                            }} 
+                         >
                             <ArrowForwardIosIcon color='default' className="card-navigation-icon" />
                         </a> : null
                 }

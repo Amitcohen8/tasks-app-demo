@@ -1,0 +1,17 @@
+.board {
+  text-align: center;
+  &-header {
+text-transform: uppercase;
+  }
+
+  &-content {
+    text-align: center;
+    background-color: #f0f4f7;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 20%;
+  }
+    
+  }
+  
+  

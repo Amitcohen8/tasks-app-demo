@@ -1,23 +1,27 @@
 
-import React, { useContext } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 import './App.scss';
-import List from './components/List';
-import { TaskContext } from './context/TaskContext'
+import { Button } from '@material-ui/core'
 
 
-function App() {
 
-
-  const { tasks } = useContext(TaskContext)
-  const statusList = ["Candidates", "In progress", "QA/Code review", "Completed"]
+const App = () => {
 
   return (
 
     <div className="App">
-      {statusList.map(status =>
-        <List key={status} status={status} tasks={[...tasks.filter(task => task.status === status)] || null}
-        />
-      )}
+    <Link to='/r&d'>
+      <Button variant="contained" color="secondary">
+        R&D
+      </Button>
+      </Link>
+      <Link>
+      <Button variant="contained" >
+        <Link to='/sales'>Sales</Link>
+      </Button>
+      </Link>
+      
     </div>
 
   );
