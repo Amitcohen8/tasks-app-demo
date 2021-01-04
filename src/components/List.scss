@@ -1,0 +1,21 @@
+.list {
+    display: flex;
+    flex-direction: column;
+   flex-grow: 1;
+   margin: 1rem;
+
+   &-header {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+   }
+
+   &-add-task {
+       display: flex;
+       justify-content: center;
+   }
+}
+
+h2 {
+    margin-right: auto;
+}
